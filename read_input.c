@@ -9,7 +9,10 @@ char *read_input(void)
 	size_t length = 0;
 	ssize_t i;
 
-	write(STDOUT_FILENO, "$$ ", 3);
+	if (isatty(STDIN_FILENO)) /* interractive mode only */
+	{
+		write(STDOUT_FILENO, "$$ ", 3);
+	}
 	i = getline(&input, &length, stdin);
 	if (i == -1)
 	{

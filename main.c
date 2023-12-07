@@ -14,8 +14,12 @@ int main(int __attribute__((__unused__)) argc, char **argv)
 	while (true)
 	{
 		input = read_input();
-		if (!input) /* ctrl + D command */
+		if (!input) /* Handle end of file using ctrl + D */
 		{
+			if (isatty(STDIN_FILENO)) /* interractive mode only */
+			{
+				write(STDOUT_FILENO, "\n", 1); /* adds a new line after reaching EOF */
+			}
 			return (0);
 		}
 		free(input);
