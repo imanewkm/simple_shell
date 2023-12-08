@@ -9,6 +9,7 @@
 int main(int __attribute__((__unused__)) argc, char **argv)
 {
 	char *input = NULL;
+	char **command = NULL;
 	(void) argv;
 
 	while (true)
@@ -22,6 +23,7 @@ int main(int __attribute__((__unused__)) argc, char **argv)
 			}
 			return (0);
 		}
-		free(input);
+		free(input); /** frees memory after leaving loop prevent memory leaks **/
+		command = segment_input(input);
 	}
 }
