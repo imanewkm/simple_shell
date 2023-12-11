@@ -22,5 +22,6 @@ int _strlen(char *s);
 char *_strncpy(char *dest, char *src, int n);
 char *_strcat(char *dest, char *src);
 void free_pointer(char *p);
+void free_array(char **array);
 
 #endif
