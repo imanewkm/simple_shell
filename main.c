@@ -10,6 +10,7 @@ int main(int __attribute__((__unused__)) argc, char **argv)
 {
 	char *input = NULL;
 	char **command = NULL;
+	int i;
 	(void) argv;
 
 	while (true)
@@ -23,7 +24,17 @@ int main(int __attribute__((__unused__)) argc, char **argv)
 			}
 			return (0);
 		}
-		free(input); /** frees memory after leaving loop prevent memory leaks **/
 		command = segment_input(input);
+		if (!command)
+		{
+			continue;
+		}
+		for (i = 0; command[i]; i++)
+		{
+			printf("%s\n", command[i]);
+			free_pointer(command[i]);
+		}
+		free(command);
+		command = NULL;
 	}
 }

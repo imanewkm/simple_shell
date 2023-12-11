@@ -19,16 +19,15 @@ char *_strdup(const char *s)
 		length++;
 		s++;
 	}
-	s -= length;
+	s = s - length;
 	p = malloc(sizeof(char) * (length + 1));
 	if (!p)
 	{
 		return (0);
 	}
-	while (n <= length)
+	for (n = 0; n <= length; n++)
 	{
 		p[n] = s[n];
-		n++;
 	}
 	return (p);
 }

@@ -11,6 +11,16 @@
 #include <errno.h>
 #include <fcntl.h>
 
+#define DELIMITER " \t\n"
+
 char *read_input(void);
+char **segment_input(char *input);
+
+char *_strdup(const char *str);
+int _strcmp(char *s1, char *s2);
+int _strlen(char *s);
+char *_strncpy(char *dest, char *src, int n);
+char *_strcat(char *dest, char *src);
+void free_pointer(char *p);
 
 #endif
