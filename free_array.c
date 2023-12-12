@@ -15,7 +15,6 @@ void free_array(char **array)
 	}
 	while (array[i])
 	{
-		printf("%s\n", array[i]);
 		free_pointer(array[i]);
 		i++;
 	}

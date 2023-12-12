@@ -6,11 +6,12 @@
  * @argv: arguments
  * Return: Always 0 (success)
  */
-int main(int __attribute__((__unused__)) argc, char **argv)
+int main(int argc, char **argv)
 {
 	char *input = NULL;
 	char **command = NULL;
-	(void) argv;
+	int result = 0;
+	(void) argc;
 
 	while (true)
 	{
@@ -21,13 +22,13 @@ int main(int __attribute__((__unused__)) argc, char **argv)
 			{
 				write(STDOUT_FILENO, "\n", 1); /* adds a new line after reaching EOF */
 			}
-			return (0);
+			return (result);
 		}
 		command = segment_input(input);
 		if (!command)
 		{
 			continue;
 		}
-		free_array(command);
+		result = execute_command(command, argv);
 	}
 }
