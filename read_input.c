@@ -11,7 +11,7 @@ char *read_input(void)
 
 	if (isatty(STDIN_FILENO)) /* interractive mode only */
 	{
-		write(STDOUT_FILENO, "$$ ", 3);
+		write(STDOUT_FILENO, "$ ", 2);
 	}
 	i = getline(&input, &length, stdin);
 	if (i == -1)
