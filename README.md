@@ -6,4 +6,4 @@ read_input
 segment_input
 execute_command
 _strdup
-
+_strcmp
