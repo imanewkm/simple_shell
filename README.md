@@ -7,3 +7,4 @@ segment_input
 execute_command
 _strdup
 _strcmp
+_strlen
