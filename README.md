@@ -11,3 +11,4 @@ _strlen
 _strncpy
 _strcat
 free_pointer
+free_array
