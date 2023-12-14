@@ -9,3 +9,4 @@ _strdup
 _strcmp
 _strlen
 _strncpy
+_strcat
