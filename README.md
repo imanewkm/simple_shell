@@ -10,3 +10,4 @@ _strcmp
 _strlen
 _strncpy
 _strcat
+free_pointer
